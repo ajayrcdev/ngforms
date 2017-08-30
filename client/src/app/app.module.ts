@@ -1,19 +1,21 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { ButtonsModule } from 'ngx-bootstrap/buttons';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from "./login/login.component";
+import { LoginFormComponent } from "./login/login-form.component";
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
-    ButtonsModule.forRoot()
+    ButtonsModule.forRoot(),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
