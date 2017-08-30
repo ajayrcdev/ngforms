@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center login-title">Sign in to continue</h1>
+            <div class="account-wall">
+                <img class="profile-img" src="https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120"
+                    alt="login">
+                <form class="form-signin" #loginForm="ngForm" (ngSubmit)="onSubmit()">
+                <input type="text" class="form-control" placeholder="Email" required autofocus
+                    name="userId" 
+                    minlength="10" maxlength="100" email
+                    [(ngModel)]="userId"
+                    #email="ngModel">
+                <input type="password" class="form-control" placeholder="Password" required
+                    name="password"
+                    minlength="8"
+                    [(ngModel)]="password"
+                    #pass="ngModel">
+
+                <div *ngIf="email.invalid && email.touched"
+                    class="alert alert-danger">
+                    <span *ngIf="email.errors.required"> Please enter email id </span>
+                    <span *ngIf="email.errors.minlength"> Email id should be at least 10 characters long </span>
+                    <span *ngIf="!email.errors.required && !email.errors.minlength && !email.errors.maxlength && email.errors.email"> Please enter valid email (in format like abc@xyz.com) </span>
+                </div>
+
+                <div *ngIf="pass.invalid && pass.touched"
+                    class="alert alert-danger">
+                    <span *ngIf="pass.errors.required"> Please enter password </span>
+                    <span *ngIf="pass.errors.minlength"> Password should be at least 8 characters long </span>
+                </div>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit" 
+                [disabled]="!loginForm.form.valid">
+                    Login in</button>
+                <label class="checkbox pull-left">
+                    <input type="checkbox" value="remember-me">
+                    Remember me
+                </label>
+                <a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+                <!--{{userId}} - {{password}}-->
+                </form>
+            </div>
+            <a href="#" class="text-center new-account">Create an account </a>
+        </div>
+    </div>
+</div>
+
