@@ -9,12 +9,12 @@
                 <input type="text" class="form-control" placeholder="Email" required autofocus
                     name="userId" 
                     minlength="10" maxlength="100" email
-                    [(ngModel)]="userId"
+                    [(ngModel)]="user.userId"
                     #email="ngModel">
                 <input type="password" class="form-control" placeholder="Password" required
                     name="password"
                     minlength="8"
-                    [(ngModel)]="password"
+                    [(ngModel)]="user.password"
                     #pass="ngModel">
 
                 <div *ngIf="email.invalid && email.touched"
