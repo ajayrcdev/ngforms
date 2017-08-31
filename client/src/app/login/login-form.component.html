@@ -13,7 +13,7 @@
                     #email="ngModel">
                 <input type="password" class="form-control" placeholder="Password" required
                     name="password"
-                    minlength="8"
+                     pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])[0-9a-zA-Z!@#\$%\^&\*]{8,}$"
                     [(ngModel)]="user.password"
                     #pass="ngModel">
 
@@ -27,7 +27,7 @@
                 <div *ngIf="pass.invalid && pass.touched"
                     class="alert alert-danger">
                     <span *ngIf="pass.errors.required"> Please enter password </span>
-                    <span *ngIf="pass.errors.minlength"> Password should be at least 8 characters long </span>
+                    <span *ngIf="!pass.errors.required"> Password should be at least 8 ccharacters long with at least 1 uppper case, 1 lower case alphabet, a digit and a special character out of !,@,#,$,%,^,& or *</span>
                 </div>
 
                 <button class="btn btn-lg btn-primary btn-block" type="submit" 
