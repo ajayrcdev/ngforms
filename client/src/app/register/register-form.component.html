@@ -1,0 +1,34 @@
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h1 class="text-center login-title"> Register please </h1>
+            <div class="account-wall">
+                <form class="form-signin" name="registerForm" [formGroup]="registerForm" novalidate>
+                    <input type="text" class="form-control" required autofocus
+                        name="name"
+                        formControlName="name"
+                        placeholder="First and Last name"                        
+                        minlength="10"
+                        maxlength="100"
+                    >
+                    <input type="text" class="form-control" placeholder="Email" required 
+                        name="userId" 
+                        formControlName="userId"
+                        minlength="10" maxlength="100" email
+                    >
+                    <input type="password" class="form-control" placeholder="Password" required
+                        name="password"
+                        formControlName="password"
+                        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#\$%\^&\*])[0-9a-zA-Z!@#\$%\^&\*]{8,}$"
+                    >
+
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">
+                        Submit 
+                    </button>
+                    <a routerLink="contactUs" class="text-center new-account">Contact us for any help </a>
+                    {{registerForm.value | json}}
+                </form>                
+            </div>
+        </div>
+    </div>
+</div> 
