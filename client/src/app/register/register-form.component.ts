@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from "@angular/forms";
+import { FormGroup, FormControl, Validators, FormBuilder } from "@angular/forms";
 import { User } from "../models/user";
 
 @Component({
@@ -11,7 +11,7 @@ export class RegisterFormComponent implements OnInit {
     registerForm: FormGroup;
     user: User;
     
-    constructor() {
+    constructor(private formBuilder: FormBuilder) {
     }
 
     ngOnInit() {
@@ -27,10 +27,10 @@ export class RegisterFormComponent implements OnInit {
     }
 
     buildForm(user:User) {
-        this.registerForm = new FormGroup({
-            name: new FormControl('' , [Validators.required]),
-            userId: new FormControl( '', [Validators.required, Validators.email] ),
-            password: new FormControl('', [Validators.required])
+        this.registerForm = this.formBuilder.group({
+            name: ['' , Validators.required],
+            userId: [ '', [ Validators.required, Validators.email ] ],
+            password: ['', Validators.required]
         });
     }
 }
