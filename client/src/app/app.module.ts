@@ -10,6 +10,8 @@ import { LoginFormComponent } from "./login/login-form.component";
 import { RegisterFormComponent } from "./register/register-form.component";
 import { ErrorComponent } from "./404/error.component";
 import { HomePageComponent } from "./homePage/home-page.component";
+import { UserService } from "./services/user.service";
+import { HttpClientModule } from '@angular/common/http';
 
 let appRoutes: Routes = [
   { path: 'register', component: RegisterFormComponent },
@@ -31,9 +33,10 @@ let appRoutes: Routes = [
     ButtonsModule.forRoot(),
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ UserService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

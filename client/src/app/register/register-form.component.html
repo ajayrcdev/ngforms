@@ -3,7 +3,7 @@
         <div class="col-sm-12">
             <h1 class="text-center login-title"> Register please </h1>
             <div class="account-wall">
-                <form class="form-signin" name="registerForm" [formGroup]="registerForm" novalidate>
+                <form class="form-signin" (submit)="onSubmit()" name="registerForm" [formGroup]="registerForm" novalidate>
                     <input type="text" class="form-control" required autofocus
                         name="name"
                         formControlName="name"
