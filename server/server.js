@@ -1,3 +1,5 @@
+// https://scotch.io/tutorials/upgrading-our-easy-node-authentication-series-to-expressjs-4-0
+
 const mongoose = require('mongoose');
 
 const express = require('express');
