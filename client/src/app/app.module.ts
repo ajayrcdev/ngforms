@@ -12,10 +12,12 @@ import { ErrorComponent } from "./404/error.component";
 import { HomePageComponent } from "./homePage/home-page.component";
 import { UserService } from "./services/user.service";
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileComponent } from "./profile/profile.component";
 
 let appRoutes: Routes = [
   { path: 'register', component: RegisterFormComponent },
   { path: 'login', component: LoginFormComponent },
+  { path: 'profile', component: ProfileComponent },
   { path: '', component: HomePageComponent }, 
   { path: '**', component: ErrorComponent }
 ];
